@@ -2,10 +2,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { HiHome, HiShoppingCart } from "react-icons/hi";
 import { useSelector } from "react-redux";
-
 import LoginMenu from "./LoginMenu";
 import Profile from "./profile";
-
 import Order from "../features/order";
 
 const StyledMenu = styled.div`
