@@ -8,7 +8,7 @@ const Styledprofile = styled.div`
   margin: 10px;
 `;
 function Profile({ name }) {
-  const profileLetter = name.split("")[0];
+  const profileLetter = name.charAt(0);
   const randomColor = () => {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
