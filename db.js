@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dburl = "mongodb://localhost:27017/trendytreasure";
+const dburl = process.env.DBurl;
 
 module.exports = () => {
   return mongoose.connect(dburl, {
