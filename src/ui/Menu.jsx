@@ -4,7 +4,7 @@ import { HiHome, HiShoppingCart } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import LoginMenu from "./LoginMenu";
 import Profile from "./Profile";
-import Order from "../features/order";
+import Order from "../features/Order";
 
 const StyledMenu = styled.div`
   display: flex;
