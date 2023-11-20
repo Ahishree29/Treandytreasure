@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const cors = require("cors");
+const Port = process.env.PORT || 5000;
 
 const connectdb = require("./db.js");
 const productrouter = require("./Controllers/product.controller.js");
@@ -19,6 +20,6 @@ app.use("/api/logout", logoutrouter);
 connectdb()
   .then(() => {
     console.log("db connection sucessful");
-    app.listen(5000, () => console.log("server started at 5000"));
+    app.listen(Port, () => console.log(`server started at ${Port}`));
   })
   .catch((err) => console.log(err));
