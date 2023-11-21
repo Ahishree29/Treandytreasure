@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { DeleveryCharge, GSTperItem } from "../constant";
 import toast from "react-hot-toast";
+import { BaseUrl } from "../helper";
 
 const StyledButton = styled.button`
   font-size: 1.5rem;
@@ -150,7 +151,7 @@ function Modal({ setIsModalOpen }) {
     };
 
     try {
-      const response = await fetch(`http://localhost:5000/api/order`, {
+      const response = await fetch(`${BaseUrl}/api/order`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

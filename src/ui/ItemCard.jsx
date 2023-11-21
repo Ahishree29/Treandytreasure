@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { isDelete, isSelector, setUpdatedCartdata } from "../Redux/cartslice";
 import { HiTrash } from "react-icons/hi";
+import { BaseUrl } from "../helper";
 const StyledProductCard = styled.div`
   background-color: #6f3064;
   width: 100%;
@@ -124,7 +125,7 @@ function ItemCard({
     async function updateCart() {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/cart/updateQuantity/${userId}/${id}`,
+          `${BaseUrl}/api/cart/updateQuantity/${userId}/${id}`,
           {
             method: "PUT",
             headers: {
@@ -159,7 +160,7 @@ function ItemCard({
     ) {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/cart/${userId}/${productId}`,
+          `${BaseUrl}/api/cart/${userId}/${productId}`,
           {
             method: "DELETE",
             headers: {

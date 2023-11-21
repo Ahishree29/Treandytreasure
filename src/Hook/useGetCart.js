@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { BaseUrl } from "../helper";
 
 export function useGetCart() {
   const [cartItem, setCartItem] = useState([]);
@@ -17,7 +18,7 @@ export function useGetCart() {
       async function getCart() {
         try {
           setisLoading(true);
-          const data = await fetch(`http://localhost:5000/api/cart/${userId}`, {
+          const data = await fetch(`${BaseUrl}/api/cart/${userId}`, {
             headers: {
               authorization: `bearer ${JSON.parse(
                 localStorage.getItem("token")

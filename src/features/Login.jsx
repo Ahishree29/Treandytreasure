@@ -11,6 +11,7 @@ import {
   logiuserId,
 } from "../Redux/loginslice";
 import toast from "react-hot-toast";
+import { BaseUrl } from "../helper";
 
 const StyledBox = styled.div`
   background-color: #690759;
@@ -88,7 +89,7 @@ function Login() {
 
   async function loggingin() {
     if (!paramemail && !paramPassword) return;
-    const response = await fetch(`http://localhost:5000/api/login/logingin`, {
+    const response = await fetch(`${BaseUrl}/api/login/logingin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

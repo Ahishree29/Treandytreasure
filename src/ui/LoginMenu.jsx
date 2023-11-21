@@ -3,6 +3,7 @@ import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loggedin } from "../Redux/loginslice";
+import { BaseUrl } from "../helper";
 
 const MenuItems = styled.h3`
   color: white;
@@ -18,7 +19,7 @@ function LoginMenu({ isloggedin }) {
   }
   async function handleLogout() {
     try {
-      const response = await fetch("http://localhost:5000/api/logout", {
+      const response = await fetch(`${BaseUrl}/api/logout`, {
         method: "POST",
       });
 

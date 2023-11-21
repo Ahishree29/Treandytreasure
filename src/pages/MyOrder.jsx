@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Spinner from "../ui/Spinner";
 import styled from "styled-components";
 import { loggedin, loginUser, logiuserId } from "../Redux/loginslice";
+import { BaseUrl } from "../helper";
 const OrderStyle = styled.div`
   padding-top: 10rem;
   padding-bottom: 20rem;
@@ -56,16 +57,13 @@ function MyOrder() {
     async function getOrder() {
       try {
         setLoading(true);
-        const response = await fetch(
-          `http://localhost:5000/api/order/${userId}`,
-          {
-            headers: {
-              authorization: `bearer ${JSON.parse(
-                localStorage.getItem("token")
-              )} `,
-            },
-          }
-        );
+        const response = await fetch(`${BaseUrl}/api/order/${userId}`, {
+          headers: {
+            authorization: `bearer ${JSON.parse(
+              localStorage.getItem("token")
+            )} `,
+          },
+        });
 
         if (!response.ok) {
           throw new Error(`Server responded with status: ${response.status}`);

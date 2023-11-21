@@ -5,6 +5,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import EmptyPage from "../ui/EmptyPage";
 import Spinner from "../ui/Spinner";
+import { BaseUrl } from "../helper";
 const Styledlayout = styled.div`
   padding-top: 8rem;
   padding-bottom: 20rem;
@@ -32,7 +33,7 @@ function Products() {
         try {
           setLoading(true);
           const response = await fetch(
-            `http://localhost:5000/api/products/${selectedGender}`
+            `${BaseUrl}/api/products/${selectedGender}`
           );
           const data = await response.json();
           const uniqueTypes = new Set();

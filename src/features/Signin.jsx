@@ -9,6 +9,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { BaseUrl } from "../helper";
 const StyledBox = styled.div`
   background-color: #690759;
   height: 100dvh;
@@ -106,7 +107,7 @@ function Signin() {
         try {
           if (!paramemail && !paramname && !parampassword) return;
           else {
-            const response = await fetch(`http://localhost:5000/api/login/`, {
+            const response = await fetch(`${BaseUrl}/api/login/`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

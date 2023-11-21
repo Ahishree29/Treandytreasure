@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import ItemCard from "./ItemCard";
 import { useGetCart } from "../Hook/useGetCart";
+import { BaseUrl } from "../helper";
 
 const CardStyle = styled.div`
   padding-left: 7rem;
@@ -54,7 +55,7 @@ function Productcard({ product }) {
         try {
           if (!idparam || !selectedsize) return dispatch(reset());
           else {
-            const response = await fetch(`http://localhost:5000/api/cart/`, {
+            const response = await fetch(`${BaseUrl}/api/cart/`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
