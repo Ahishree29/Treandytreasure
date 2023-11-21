@@ -11,6 +11,13 @@ Navigate to the project directory: cd trendytreasure
 Install dependencies: npm install
 Run the project: npm run dev
 
+# Project Origin
+This project is a culmination of original ideas and knowledge gathered from various sources, including personal insights and referenced documentation. It has been crafted based on a combination of:
+
+Original Ideas: Incorporated personal insights and innovative concepts to create a unique user experience within the e-commerce domain.
+Referenced Documentation: Leveraged valuable insights from diverse resources, including online tutorials, documentation, and best practices from the field.
+The project architecture, design, and functionalities are a result of the amalgamation of these original ideas and the wealth of knowledge obtained from referred documentation.
+
 # Features
 
 User Authentication: Users can sign in to the website to access features like adding products to the cart and making purchases.
