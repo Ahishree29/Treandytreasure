@@ -38,18 +38,17 @@ function Address({ handleNext, handlePrevious }) {
 
         const response = await axios.get("/api/address/", config);
         if (response && response.data) {
-          setDeleveryAddres(response.data); 
+          setDeleveryAddres(response.data);
           setIsDeleted(false);
           setIsAdded(false);
           setIsSelected(false);
         }
       } catch (error) {
-       
         console.error("Error fetching delivery address:", error);
       }
     };
     getAddress();
-  }, [isDeleted, isAdded, isSelected]);
+  }, [isDeleted, isAdded, isSelected, user.token]);
   const handleAddAddress = async (e) => {
     e.preventDefault();
     const newAddress = {
@@ -83,7 +82,6 @@ function Address({ handleNext, handlePrevious }) {
         setAddAddress(false);
       }
     } catch (error) {
-    
       console.error("Error fetching delivery address:", error);
       toast.error("Error fetching delivery address");
     }
@@ -100,10 +98,9 @@ function Address({ handleNext, handlePrevious }) {
       const response = await axios.delete(`/api/address/${addressId}`, config);
       if (response) {
         setIsDeleted(true);
-        toast.success("deleted succesfully"); 
+        toast.success("deleted succesfully");
       }
     } catch (error) {
-   
       console.error("Error fetching delivery address:", error);
     }
   };
@@ -133,11 +130,10 @@ function Address({ handleNext, handlePrevious }) {
       );
       if (response) {
         setIsAdded(true);
-        toast.success("updated succesfully"); 
+        toast.success("updated succesfully");
         setUpdateAddress(false);
       }
     } catch (error) {
-      
       console.error("Error fetching delivery address:", error);
     }
   };
@@ -186,15 +182,13 @@ function Address({ handleNext, handlePrevious }) {
       const response = await axios.put(
         `/api/address/select/${addressId}`,
         {},
-        
+
         config
       );
       if (response && response.data) {
-       
         setIsSelected(true);
       }
     } catch (error) {
-
       console.error("Error fetching delivery address:", error);
     }
   };

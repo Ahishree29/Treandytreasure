@@ -11,7 +11,7 @@ function Product() {
   const { user, setCart } = TrendyState();
   const [productSelected, setProductSelected] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [ setViewModel] = useState(false);
+  const [setViewModel] = useState(false);
   const [page, setPage] = useState(1);
   const [totalProducts, setTotalProducts] = useState(1);
   const [searchParams] = useSearchParams();
@@ -64,12 +64,11 @@ function Product() {
       } catch (err) {
         console.error("Error fetching product data:", err);
         setLoading(false);
-      
       }
     };
 
     getProduct();
-  }, [offer, query, section, category, productType, page]); 
+  }, [offer, query, section, category, productType, page, setCart, user.token]);
   const nextPage = () => {
     setPage((prev) => prev + 1);
   };
@@ -95,12 +94,7 @@ function Product() {
         <div className="flex justify-center items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 lg:gap-40  ">
             {productSelected.map((item, i) => (
-              <ProductCard
-                key={i}
-                item={item}
-                setViewModel={setViewModel}
-               
-              />
+              <ProductCard key={i} item={item} setViewModel={setViewModel} />
             ))}
           </div>
         </div>

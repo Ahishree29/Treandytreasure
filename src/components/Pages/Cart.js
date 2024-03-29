@@ -57,7 +57,7 @@ function Cart({ handleNext }) {
     };
 
     getCartItem();
-  }, [isdelete, isUpdate]);
+  }, [isdelete, isUpdate, userInfo.token, setCart]);
 
   const handleCartDelete = async (chatId) => {
     setLoading(false);

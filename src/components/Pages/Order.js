@@ -59,7 +59,7 @@ function Order({ handlePrevious, handleNext }) {
       }
     };
     getCartItems();
-  }, []);
+  }, [user.token]);
   useEffect(() => {
     const generateRandomNumber = () => {
       const min = 100000;

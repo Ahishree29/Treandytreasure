@@ -11,8 +11,7 @@ function Header() {
   const [openNav, setOpenNav] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
-  const [productType, setProductType] = useState();
-  const [section, setSection] = useState();
+
   const [profileMenu, setProfileMenu] = useState(false);
   const count = useSelector((state) => state.productSlice.cartCount);
   const user = JSON.parse(localStorage.getItem("userInfo"));
@@ -157,18 +156,12 @@ function Header() {
           {showMenu === "men" && (
             <>
               <Link to={`/Product?productType=clothes&category=men`}>
-                <div
-                  className="text-white p-3 active:text-pink-500"
-                  onClick={() => setProductType("clothes")}
-                >
+                <div className="text-white p-3 active:text-pink-500">
                   men's clothes
                 </div>
               </Link>
               <Link to={`/Product?productType=accessories&category=men`}>
-                <div
-                  className="text-white p-3 active:text-pink-500"
-                  onClick={() => setProductType("accessories")}
-                >
+                <div className="text-white p-3 active:text-pink-500">
                   {" "}
                   men's Accessories
                 </div>
@@ -178,18 +171,12 @@ function Header() {
           {showMenu === "women" && (
             <>
               <Link to={`/Product?productType=clothes&category=women`}>
-                <div
-                  className="text-white p-3 active:text-pink-500"
-                  onClick={() => setProductType("clothes")}
-                >
+                <div className="text-white p-3 active:text-pink-500">
                   women's clothes
                 </div>
               </Link>
               <Link to={`/Product?productType=accessories&category=women`}>
-                <div
-                  className="text-white p-3 active:text-pink-500"
-                  onClick={() => setProductType("accessories")}
-                >
+                <div className="text-white p-3 active:text-pink-500">
                   {" "}
                   women's Accessories
                 </div>
@@ -201,26 +188,14 @@ function Header() {
               <Link
                 to={`/Product?productType=clothes&category=kids&section=boy`}
               >
-                <div
-                  className="text-white p-3 active:text-pink-500"
-                  onClick={() => {
-                    setProductType("clothes");
-                    setSection("boy");
-                  }}
-                >
+                <div className="text-white p-3 active:text-pink-500">
                   boys's clothes
                 </div>
               </Link>
               <Link
                 to={`/Product?productType=accessories&category=kids&section=boy`}
               >
-                <div
-                  className="text-white p-3 active:text-pink-500"
-                  onClick={() => {
-                    setProductType("accessories");
-                    setSection("boy");
-                  }}
-                >
+                <div className="text-white p-3 active:text-pink-500">
                   {" "}
                   boys's Accessories
                 </div>
@@ -228,26 +203,14 @@ function Header() {
               <Link
                 to={`/Product?productType=clothes&category=kids&section=girl`}
               >
-                <div
-                  className="text-white p-3 active:text-pink-500"
-                  onClick={() => {
-                    setProductType("clothes");
-                    setSection("girl");
-                  }}
-                >
+                <div className="text-white p-3 active:text-pink-500">
                   girl's clothes
                 </div>
               </Link>
               <Link
                 to={`/Product?productType=accessories&category=kids&section=girl`}
               >
-                <div
-                  className="text-white p-3 active:text-pink-500"
-                  onClick={() => {
-                    setProductType("accessories");
-                    setSection("girl");
-                  }}
-                >
+                <div className="text-white p-3 active:text-pink-500">
                   {" "}
                   girl's Accessories
                 </div>

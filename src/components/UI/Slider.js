@@ -20,7 +20,7 @@ function Slider() {
       setImageLoad(true);
     };
     img.src = featuredProducts[currentIndex].image;
-  }, [featuredProducts[currentIndex].image]);
+  }, [currentIndex]);
   useEffect(() => {
     sliderRef.current.addEventListener("animationend", requestAnimation);
     sliderRef.current.addEventListener("mouseenter", pauseSlider);

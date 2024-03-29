@@ -38,7 +38,7 @@ function MyOrder() {
     };
 
     getOrder();
-  }, []);
+  }, [user.token]);
 
   return isLoading ? (
     <div className="flex justify-center items-center p-7 flex-col h-screen">
@@ -55,11 +55,13 @@ function MyOrder() {
       <Empty orderpage={orderpage} />
     </div>
   ) : (
-    <div>
-      {item.map((i, index) => (
-        <OrderView order={i} key={index} />
-      ))}
-    </div>
+    Array.isArray(item) && (
+      <div>
+        {item.map((i, index) => (
+          <OrderView order={i} key={index} />
+        ))}
+      </div>
+    )
   );
 }
 

@@ -20,7 +20,7 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share";
-import { ShareImage } from "react-share";
+
 function ProductView() {
   const dispatch = useDispatch();
   const { user, setCart } = TrendyState();
@@ -33,7 +33,7 @@ function ProductView() {
   const id = searchParams.get("ProductId");
   const [review, setReview] = useState("");
   const [post, setPost] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  const [setShowMenu] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const [selectedSize, setSelectedSize] = useState();
   const [shareModel, setShareModel] = useState(false);
@@ -62,7 +62,7 @@ function ProductView() {
     if (id) {
       getProduct();
     }
-  }, [post]);
+  }, [post, id]);
   if (loading) {
     return (
       <div className="h-screen flex justify-center items-center">
@@ -202,7 +202,6 @@ function ProductView() {
               </EmailShareButton>
               <WhatsappShareButton
                 url={shareUrl}
-              
                 title="Look at this amazing discovery I stumbled upon in Trendy Treasure!"
               >
                 <WhatsappIcon />

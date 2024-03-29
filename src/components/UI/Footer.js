@@ -11,7 +11,11 @@ function Footer() {
           <img src="./logo.png" alt="logo" className="w-40 mb-2" />
         </div>
         <div className="py-2">
-          <a href="mailto:trendytreasure@gmail.com" target="_blank">
+          <a
+            href="mailto:trendytreasure@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             trendytreasure@gmail.com
           </a>
         </div>
@@ -27,22 +31,34 @@ function Footer() {
         <div className="flex flex-row p-3">
           <div className="px-1 text-lg">
             {" "}
-            <a href="https://www.facebook.com/login.php/" target="_blank">
+            <a
+              href="https://www.facebook.com/login.php/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaFacebookF />
             </a>
           </div>
           <div className="px-1 text-lg">
-            <a href="https://www.instagram.com/?hl=en" target="_blank">
+            <a
+              href="https://www.instagram.com/?hl=en"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaInstagram />
             </a>
           </div>
           <div className="px-1 text-lg">
-            <a href="mailto:trendytreasure@gmail.com" target="_blank">
+            <a
+              href="mailto:trendytreasure@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <IoMdMail />
             </a>{" "}
           </div>
           <div className="px-1 text-lg">
-            <a href="https://www.youtube.com/" target="_blank">
+            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
               <FaYoutube />
             </a>{" "}
           </div>
