@@ -5,8 +5,7 @@ const initialState = {
 };
 const productSlice = createSlice({
   name: "product",
-  initialState,
-  reducers: {
+  initialState,  reducers: {
     setCartCount(state, action) {
       state.cartCount = action.payload;
     },
