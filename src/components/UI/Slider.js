@@ -22,20 +22,21 @@ function Slider() {
     img.src = featuredProducts[currentIndex].image;
   }, [currentIndex]);
   useEffect(() => {
+    const startSlider = () => {
+      slideInterval = setInterval(() => {
+        handleOnNextClick();
+      }, 3000);
+    };
+
     sliderRef.current.addEventListener("animationend", requestAnimation);
     sliderRef.current.addEventListener("mouseenter", pauseSlider);
     sliderRef.current.addEventListener("mouseleave", startSlider);
     startSlider();
+
     return () => {
       pauseSlider();
     };
   }, []);
-
-  const startSlider = () => {
-    slideInterval = setInterval(() => {
-      handleOnNextClick();
-    }, 3000);
-  };
   const pauseSlider = () => {
     clearInterval(slideInterval);
   };
