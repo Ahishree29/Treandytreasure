@@ -1,25 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import EntryPage from "./components/Authentication/EntryPage";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import AppLayout from "./components/UI/AppLayout";
+import Home from "./components/Pages/Home";
+import TrendyProvider from "./context/TrendyProvider";
+import Product from "./components/Pages/Product";
+import ProductView from "./components/Pages/ProductView";
+import Stepper from "./components/UI/Stepper";
+import MyOrder from "./components/Pages/MyOrder";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <BrowserRouter>
+      <Routes>
+        <Route
+          element={
+            <TrendyProvider>
+              <AppLayout />
+            </TrendyProvider>
+          }
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Route index element={<Navigate replace to="Home" />} />
+          <Route
+            path="Home"
+            element={
+              <TrendyProvider>
+                <Home />
+              </TrendyProvider>
+            }
+          />
+          <Route
+            path="/Product"
+            element={
+              <TrendyProvider>
+                <Product />
+              </TrendyProvider>
+            }
+          />
+          <Route
+            path="/ProductView"
+            element={
+              <TrendyProvider>
+                <ProductView />
+              </TrendyProvider>
+            }
+          />
+          <Route
+            path="/Cart"
+            element={
+              <TrendyProvider>
+                <Stepper />
+              </TrendyProvider>
+            }
+          />
+          <Route
+            path="/MyOrder"
+            element={
+              <TrendyProvider>
+                <MyOrder />
+              </TrendyProvider>
+            }
+          />
+        </Route>
+        <Route path="/login" element={<EntryPage />} />
+      </Routes>
+      <Toaster />
+    </BrowserRouter>
   );
 }
-
-export default App;
