@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+  </head>
+
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    "
+  >
+    <div
+      style="
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background-color: wheat;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      "
+    >
+      <h1
+        style="
+          color: rgb(175, 97, 48);
+          font-size: 24px;
+          margin: 0 0 20px;
+          text-align: center;
+        "
+      >
+        Trendy Treasure💃 <br />
+        <span
+          style="color: black; font-size: 10px; margin: 20px; display: block"
+          >Cherish Every Fashion Find</span
+        >
+      </h1>
+      <h3 style="margin: 0 0 10px">Hello {{customerName}},</h3>
+      <p style="font-size: 1.5rem; margin: 0 0 20px">
+        Congratulations, your order has been placed successfully! 🥳🥳
+      </p>
+      <p style="font-size: small; margin: 0 0 5px">
+        Order number: {{orderNumber}}
+      </p>
+      <p style="font-size: small; margin: 0 0 5px">
+        Total items: {{totalQuantity}}
+      </p>
+      <p style="font-size: small; margin: 0 0 20px">
+        Total Price: Rs.{{totalPrice}}/-
+      </p>
+      <p style="font-size: small; margin: 0 0 5px">
+        Delivery partner will contact you on {{costomerNumber}}
+      </p>
+      <p style="font-size: small; margin: 0 0 20px">
+        Delivery address is {{costomerAddress}}
+      </p>
+
+      <div
+        style="
+          background-color: rgb(175, 97, 48);
+          border-radius: 5px;
+          color: white;
+          padding: 10px;
+          margin: 0 0 20px;
+        "
+      >
+        Indulge in the ultimate shopping experience at Trendy Treasure💃! Your
+        recent purchase adds a touch of glam to your style, and we're thrilled
+        you chose us. Thank you for shopping with us—your fashion journey is our
+        delight. Stay tuned for exclusive trends and unbeatable styles. Trendy
+        Treasure: Where every purchase is a statement in elegance!
+      </div>
+
+      <div style="display: flex; justify-content: center; margin: 10px">
+        <a
+          href="https://trendytresure.netlify.app/myorder"
+          style="text-decoration: none"
+        >
+          <button
+            style="
+              width: 10rem;
+              height: 3rem;
+              border-radius: 8px;
+              background-color: black;
+              color: white;
+              border: none;
+            "
+          >
+            Back To Shopping
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Additional HTML content for the email template -->
+  </body>
+</html>
