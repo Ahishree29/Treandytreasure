@@ -10,11 +10,12 @@ const cartRouter = require("./routes/cartRouter");
 const addressRouter = require("./routes/addressRouter");
 const orderRouter = require("./routes/orderRouter");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
-
+const cors = require("cors");
 const PORT = process.env.PORT || 5000;
 dotenv.config();
 connectDB();
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => res.send("API is running"));
