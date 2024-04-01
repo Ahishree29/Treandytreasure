@@ -1,8 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 const TrendyContex = createContext();
 function TrendyProvider({ children }) {
-  const navigate = useNavigate();
   const [user, setUser] = useState();
   const [items, setItems] = useState(null);
   const [selectedItem, setSelectedItem] = useState();
