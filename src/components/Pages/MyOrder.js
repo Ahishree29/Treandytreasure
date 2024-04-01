@@ -15,6 +15,9 @@ function MyOrder() {
     const getOrder = async () => {
       setIsLoading(true);
       try {
+        if (!user || !user.token) {
+          return;
+        }
         const config = {
           headers: {
             "Content-Type": "application/json",
@@ -38,7 +41,7 @@ function MyOrder() {
     };
 
     getOrder();
-  }, [user.token]);
+  }, [user]);
 
   return isLoading ? (
     <div className="flex justify-center items-center p-7 flex-col h-screen">

@@ -27,6 +27,9 @@ function Product() {
     const getProduct = async () => {
       setLoading(true);
       try {
+        if (!user || !user.token) {
+          return;
+        }
         const config = {
           headers: {
             "content-type": "application/json",
@@ -68,7 +71,7 @@ function Product() {
     };
 
     getProduct();
-  }, [offer, query, section, category, productType, page, setCart, user.token]);
+  }, [offer, query, section, category, productType, page, setCart, user]);
   const nextPage = () => {
     setPage((prev) => prev + 1);
   };
