@@ -5,20 +5,23 @@ import { TrendyState } from "../../context/TrendyProvider";
 import { getDiscountPrice } from "../../helper/getDiscountPrice";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import toast from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
-import { setCartCount } from "../../redux/productSlice";
+
+import useCartCount from "../../Hook/useCartCount";
 
 function Order({ handlePrevious, handleNext }) {
   const { user, setCart } = TrendyState();
-  const dispatch = useDispatch();
+
+  const { getCartCount } = useCartCount();
   const [address, setAddress] = useState([]);
   const [items, setItems] = useState([]);
   const [totalPriceWithOffer, setTotalPriceWithOffer] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [randomNumber, setRandomNumber] = useState(null);
   const [success, setSuccess] = useState(false);
-  const count = useSelector((state) => state.productSlice.cartCount);
 
+  useEffect(() => {
+    getCartCount();
+  }, [getCartCount]);
   useEffect(() => {
     const getAddress = async () => {
       try {
@@ -86,8 +89,6 @@ function Order({ handlePrevious, handleNext }) {
       if (response && response.data) {
         setSuccess(true);
         toast.success("Order placed successfully");
-
-        dispatch(setCartCount(count - items.length));
 
         setCart(true);
       }

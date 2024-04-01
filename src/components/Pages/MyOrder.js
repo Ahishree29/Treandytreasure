@@ -23,7 +23,7 @@ function MyOrder() {
         };
 
         const response = await axios.get(
-          "/api/order/",
+          "/api/order",
 
           config
         );
@@ -32,7 +32,7 @@ function MyOrder() {
           setIsLoading(false);
         }
       } catch (error) {
-        toast.error(error);
+        toast.error(error.message);
         setIsLoading(false);
       }
     };
@@ -50,12 +50,12 @@ function MyOrder() {
         data-testid="loader"
       />
     </div>
-  ) : item.length <= 0 ? (
+  ) : item.length === 0 ? (
     <div className="flex justify-center items-center">
       <Empty orderpage={orderpage} />
     </div>
   ) : (
-    Array.isArray(item) && (
+    item && (
       <div>
         {item.map((i, index) => (
           <OrderView order={i} key={index} />

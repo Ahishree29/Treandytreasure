@@ -4,8 +4,10 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+
 function Header() {
   const navigate = useNavigate();
+
   const modalRef = useRef();
 
   const [openNav, setOpenNav] = useState(false);
@@ -54,6 +56,7 @@ function Header() {
       navigate("/login");
     } else navigate("/Cart");
   };
+
   return (
     <div className=" w-screen p-1 shadow-md shadow-pink-900 bg-pink-400 fixed z-50 cursor-pointer ">
       <img

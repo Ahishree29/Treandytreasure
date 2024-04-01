@@ -1,45 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Slider from "../UI/Slider";
 import Corosal from "../UI/Corosal";
-import axios from "../../axiosInstance";
-import { TrendyState } from "../../context/TrendyProvider";
-import { useDispatch } from "react-redux";
-import { setCartCount } from "../../redux/productSlice";
+
 import { WomenItem } from "../../Configuration/WomenItem";
 import { MenItem } from "../../Configuration/MenItem";
 import { KidsItem } from "../../Configuration/KidsItem";
+import useCartCount from "../../Hook/useCartCount";
 
 function Home() {
-  const dispatch = useDispatch();
-  const { user, cart } = TrendyState();
-  const [count, setCount] = useState(0);
+  const { getCartCount } = useCartCount();
+
   useEffect(() => {
-    const getCartCount = async () => {
-      if (!user) {
-        return;
-      }
-      try {
-        const config = {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
-        };
-
-        const { data } = await axios.get("/api/cart/getCount", config);
-        if (data) {
-          setCount(data);
-        }
-      } catch (error) {
-        console.error("Error fetching cart count:", error);
-      }
-    };
-
     getCartCount();
-  }, [user, cart]);
-  useEffect(() => {
-    dispatch(setCartCount(count));
-  }, [dispatch, cart, count, user]);
+  }, [getCartCount]);
   return (
     <>
       <div className="flex flex-row justify-center items-center p-2 ">

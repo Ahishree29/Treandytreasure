@@ -8,13 +8,14 @@ import { getDiscountPrice } from "../../helper/getDiscountPrice";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import PulseLoader from "react-spinners/PulseLoader";
 import Empty from "./Empty";
-import { useDispatch, useSelector } from "react-redux";
-import { setCartCount } from "../../redux/productSlice";
+
+import useCartCount from "../../Hook/useCartCount";
 
 function Cart({ handleNext }) {
   const navigate = useNavigate();
   const cartpage = true;
-  const dispatch = useDispatch();
+  const { getCartCount } = useCartCount();
+
   const { user, setCart } = TrendyState();
   const [isdelete, setIsDelete] = useState(false);
   const [isUpdate, setIsUpdate] = useState(false);
@@ -24,7 +25,10 @@ function Cart({ handleNext }) {
   const [loading, setLoading] = useState(false);
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const totalCartItem = item?.length || 0;
-  const count = useSelector((state) => state.productSlice.cartCount);
+
+  useEffect(() => {
+    getCartCount();
+  }, [getCartCount]);
   useEffect(() => {
     const getCartItem = async () => {
       setLoading(true);
@@ -46,6 +50,7 @@ function Cart({ handleNext }) {
           setCart(true);
           setIsUpdate(false);
           setIsDelete(false);
+
           setTimeout(() => {
             setLoading(false);
           }, 1000);
@@ -72,7 +77,6 @@ function Cart({ handleNext }) {
       const response = await axios.delete(`/api/cart/${chatId}`, config);
       if (response) {
         setIsDelete(true);
-        dispatch(setCartCount(count - 1));
 
         setCart(true);
         setTimeout(() => {
