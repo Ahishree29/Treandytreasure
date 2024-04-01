@@ -7,7 +7,7 @@ import { getTimeAgo } from "../../helper/getTimeAgo";
 import Star from "../UI/Star";
 import { TrendyState } from "../../context/TrendyProvider";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import axios from "../../../axiosInstance"
+import axios from "../../axiosInstance";
 import toast from "react-hot-toast";
 import PulseLoader from "react-spinners/PulseLoader";
 import { useDispatch } from "react-redux";

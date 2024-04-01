@@ -1,4 +1,4 @@
-import axios from "../../../axiosInstance";
+import axios from "../../axiosInstance";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { HiOutlineEye, HiOutlineEyeSlash } from "react-icons/hi2";

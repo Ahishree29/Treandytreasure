@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { TrendyState } from "../../context/TrendyProvider";
 import { useNavigate } from "react-router-dom";
-import axios from "../../../axiosInstance";
+import axios from "../../axiosInstance";
 import toast from "react-hot-toast";
 import CartCard from "../UI/CartCard";
 import { getDiscountPrice } from "../../helper/getDiscountPrice";

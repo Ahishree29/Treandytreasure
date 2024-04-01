@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import axios from "../../../axiosInstance";
+import axios from "../../axiosInstance";
 import { TrendyState } from "../../context/TrendyProvider";
 import { useDispatch } from "react-redux";
 import { setCartCount } from "../../redux/productSlice";
