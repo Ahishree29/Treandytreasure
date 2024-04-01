@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TrendyState } from "../../context/TrendyProvider";
-import axios from "axios";
+import axios from "../../../axiosInstance";
 import toast from "react-hot-toast";
 import PulseLoader from "react-spinners/PulseLoader";
 import OrderView from "../UI/OrderView";

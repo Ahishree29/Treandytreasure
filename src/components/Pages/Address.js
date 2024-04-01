@@ -6,7 +6,7 @@ import {
   HiTrash,
 } from "react-icons/hi";
 import { TrendyState } from "../../context/TrendyProvider";
-import axios from "axios";
+import axios from "../../../axiosInstance";
 import toast from "react-hot-toast";
 
 function Address({ handleNext, handlePrevious }) {

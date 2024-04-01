@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { getDiscountPrice, getOffer } from "../../helper/getDiscountPrice";
 import { HiOutlineX } from "react-icons/hi";
-import axios from "axios";
+import axios from "../../../axiosInstance";
 import { TrendyState } from "../../context/TrendyProvider";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";

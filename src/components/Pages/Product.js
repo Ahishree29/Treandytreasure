@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { TrendyState } from "../../context/TrendyProvider";
 import ProductCard from "../UI/ProductCard";
-import axios from "axios";
+import axios from "../../../axiosInstance";
 import { useSearchParams } from "react-router-dom";
 import Empty from "./Empty";
 import ProductSkeleton from "../UI/ProductSkeleton";

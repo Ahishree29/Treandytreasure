@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../UI/Slider";
 import Corosal from "../UI/Corosal";
-import axios from "axios";
+import axios from "../../../axiosInstance";
 import { TrendyState } from "../../context/TrendyProvider";
 import { useDispatch } from "react-redux";
 import { setCartCount } from "../../redux/productSlice";
