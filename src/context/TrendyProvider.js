@@ -19,7 +19,7 @@ function TrendyProvider({ children }) {
     if (userInfo) {
       setUser(userInfo);
     }
-  }, [navigate]);
+  }, []);
 
   return (
     <TrendyContex.Provider
