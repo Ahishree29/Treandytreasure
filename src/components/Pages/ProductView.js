@@ -84,8 +84,8 @@ function ProductView() {
   }
 
   const handleReview = async () => {
-    if (!user || !user.token) {
-      return;
+    if (!user) {
+      navigate("/login");
     }
     if (!rating) {
       toast.error("please rate the product");
@@ -115,7 +115,7 @@ function ProductView() {
   };
 
   const handleCart = async () => {
-    if (!user.token) {
+    if (!user) {
       navigate("/login");
     }
     if (selectedItem.size.length > 0) {
