@@ -38,6 +38,7 @@ function ProductView() {
   const [selectedSize, setSelectedSize] = useState();
   const [shareModel, setShareModel] = useState(false);
   const shareUrl = window.location.href;
+
   useEffect(() => {
     const getProduct = async () => {
       try {
@@ -82,11 +83,12 @@ function ProductView() {
   }
 
   const handleReview = async () => {
-    if (!user.token) {
-      navigate("/login");
+    if (!user || !user.token) {
+      return;
     }
     if (!rating) {
       toast.error("please rate the product");
+      return;
     }
 
     try {
@@ -96,7 +98,7 @@ function ProductView() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-
+      console.log("comment", user.token);
       const response = await axios.post(
         "/api/comment/",
         { rating, review, productId: id },
