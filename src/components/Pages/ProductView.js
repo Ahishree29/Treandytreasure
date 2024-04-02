@@ -23,7 +23,8 @@ import {
 
 function ProductView() {
   const dispatch = useDispatch();
-  const { user, setCart } = TrendyState();
+  const { setCart } = TrendyState();
+  const user = JSON.parse(localStorage.getItem("userInfo"));
   const navigate = useNavigate();
   const [showMore, setShowMore] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
