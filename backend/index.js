@@ -15,13 +15,7 @@ const PORT = process.env.PORT || 5000;
 dotenv.config();
 connectDB();
 const app = express();
-const corsOptions = {
-  origin: "https://trendytresure.netlify.app",
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => res.send("API is running"));
