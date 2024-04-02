@@ -48,6 +48,11 @@ function Login() {
       }
     }
   };
+  const handelGuestuser = (e) => {
+    e.preventDefault();
+    setEmail("guest@example.com");
+    setPassword("123456");
+  };
   return (
     <form className="flex flex-col py-10 ">
       <label className=" text-xl py-3">Email</label>
@@ -96,7 +101,10 @@ function Login() {
             "LogIn"
           )}
         </button>
-        <button className=" text-white font-bold rounded-xl   mt-3 py-2 px-20 bg bg-pink-700">
+        <button
+          className=" text-white font-bold rounded-xl   mt-3 py-2 px-20 bg bg-pink-700"
+          onClick={handelGuestuser}
+        >
           Guest User
         </button>
       </div>
