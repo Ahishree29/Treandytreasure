@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://treandytreasure.onrender.com",
+  baseURL: "https://treandytreasu/re.onrender.com",
   // baseURL: "http://127.0.0.1:5000",
   timeout: 5000,
   headers: {
@@ -15,7 +15,7 @@ instance.interceptors.request.use(
       ? JSON.parse(localStorage.getItem("userInfo")).token
       : null;
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers.authorization = `Bearer ${token}`;
     }
     return config;
   },
