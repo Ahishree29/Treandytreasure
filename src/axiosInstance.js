@@ -15,7 +15,7 @@ instance.interceptors.request.use(
       ? JSON.parse(localStorage.getItem("userInfo")).token
       : null;
     if (token) {
-      config.headers.authorization = `Bearer ${token}`;
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
